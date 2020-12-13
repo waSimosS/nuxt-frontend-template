@@ -1,9 +1,16 @@
-export const state = () => ({
-  counter: 0
-})
+import Vuex from 'vuex'
+import Vue from 'vue'
 
-export const mutations = {
-  increment (state) {
-    state.counter++
-  }
+import { auth } from './auth.module'
+
+Vue.use(Vuex)
+
+const store = () => {
+  return new Vuex.Store({
+    modules: {
+      auth
+    }
+  })
 }
+
+export default store
